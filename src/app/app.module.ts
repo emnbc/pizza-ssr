@@ -13,6 +13,7 @@ import { NgZorroModule } from './shared/ng-zorro.module';
 import { SharedModule } from './shared/shared.module';
 import { HomePageModule } from './pages/home-page/home-page.module';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { ProfilePageModule } from './pages/profile-page/profile-page.module';
 
 registerLocaleData(en);
 
@@ -22,13 +23,14 @@ registerLocaleData(en);
     MainMenuComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     SharedModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     NgZorroModule,
-    HomePageModule
+    HomePageModule,
+    ProfilePageModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
