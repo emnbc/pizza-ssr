@@ -1,12 +1,8 @@
-<!-- NG-ZORRO -->
 <nz-layout>
   <nz-header>
-    <div class="logo"></div>
-    <ul nz-menu nzTheme="dark" nzMode="horizontal">
-      <li nz-menu-item>nav 1</li>
-      <li nz-menu-item>nav 2</li>
-      <li nz-menu-item>nav 3</li>
-    </ul>
+
+    <pzs-main-menu></pzs-main-menu>
+
   </nz-header>
   <nz-content>
 
@@ -16,13 +12,8 @@
       <nz-breadcrumb-item>App</nz-breadcrumb-item>
     </nz-breadcrumb>
 
-    <nz-card nzHoverable style="width:240px" [nzCover]="coverTemplate">
-      <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
-    </nz-card>
-    <ng-template #coverTemplate>
-      <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
-    </ng-template>
+    <router-outlet></router-outlet>
 
   </nz-content>
-  <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+  <nz-footer>Pizza SSR ©2021 EMNBC</nz-footer>
 </nz-layout>
