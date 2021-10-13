@@ -25,6 +25,7 @@
     "@angular/router": "~12.2.0",
     "@nguniversal/express-engine": "^12.1.1",
     "express": "^4.15.2",
+    "http-proxy-middleware": "^2.0.1",
     "ng-zorro-antd": "^12.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",

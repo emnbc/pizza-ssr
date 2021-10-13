@@ -8,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePageComponent implements OnInit {
 
+  pizzas: any[] = [];
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('/api/test').subscribe(res => {
-      console.log(res);
+    this.http.get<any[]>('/api/pizzas').subscribe(res => {
+      this.pizzas = res;
+      // console.log(res);
     });
   }
 

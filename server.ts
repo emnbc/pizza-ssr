@@ -3,6 +3,7 @@ import 'zone.js/dist/zone-node';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { join } from 'path';
+import { createProxyMiddleware, Filter, Options, RequestHandler } from 'http-proxy-middleware';
 
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
@@ -22,6 +23,8 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
+  server.use('/api', createProxyMiddleware({ target: 'http://pizzashop.emnbc.com', changeOrigin: true }));
+
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
@@ -29,9 +32,10 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
-  server.get('/api/test', (req, res) => {
-    res.send({data: "Test response"});
-  });
+  // server.get('/api/pizzas', (req, res) => {
+  //   console.log('################### request');
+  //   res.send([{data: "Test 1"},{data: "Test 2"}]);
+  // });
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
