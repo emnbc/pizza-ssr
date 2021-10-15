@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PizzaResponse } from '../../interfaces/pazza.interface';
+import { PizzaService } from '../../services/pizza.service';
 
 @Component({
   selector: 'pzs-home-page',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  pizzas: PizzaResponse[] = [];
+
+  constructor(private pizzaService: PizzaService) { }
 
   ngOnInit(): void {
+    this.pizzaService.getPizzas().subscribe(res => {
+      this.pizzas = res;
+    });
   }
 
 }

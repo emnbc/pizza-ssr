@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,15 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePageComponent implements OnInit {
 
-  pizzas: any[] = [];
-
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.http.get<any[]>('/api/pizzas').subscribe(res => {
-      this.pizzas = res;
-      // console.log(res);
-    });
+
   }
 
 }
