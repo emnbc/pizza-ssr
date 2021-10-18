@@ -1,10 +1,10 @@
 <div class="flex-grid">
-    <div *ngFor="let el of pizzas" class="flex-grid__item">
+    <div *ngFor="let pizza of pizzas" class="flex-grid__item">
         <nz-card nzHoverable [nzCover]="coverTemplate">
             <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
         </nz-card>
         <ng-template #coverTemplate>
-            <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+            <img [alt]="pizza.img" [src]="'assets/img/' + pizza.img" />
         </ng-template>
     </div>
 </div>
