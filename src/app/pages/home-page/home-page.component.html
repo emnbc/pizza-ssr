@@ -1,7 +1,7 @@
 <div class="flex-grid">
     <div *ngFor="let pizza of pizzas" class="flex-grid__item">
         <nz-card nzHoverable [nzCover]="coverTemplate">
-            <nz-card-meta nzTitle="Europe Street beat" nzDescription="www.instagram.com"></nz-card-meta>
+            <nz-card-meta [nzTitle]="pizza.name" [nzDescription]="pizza.description"></nz-card-meta>
         </nz-card>
         <ng-template #coverTemplate>
             <img [alt]="pizza.img" [src]="'assets/img/' + pizza.img" />

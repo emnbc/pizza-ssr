@@ -20,9 +20,6 @@ export class UrlInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    // console.log("req", req);
-    // console.log("host", this.request.get('host'));
-
     if (this.request && !isAbsoluteUrl(req.url)) {
       const protocolHost = `${this.request.protocol}://${this.request.get('host')}`;
 

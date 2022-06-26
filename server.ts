@@ -3,7 +3,7 @@ import 'zone.js/dist/zone-node';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { join } from 'path';
-import { createProxyMiddleware, Filter, Options, RequestHandler } from 'http-proxy-middleware';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
@@ -31,11 +31,6 @@ export function app(): express.Express {
   server.get('*.*', express.static(distFolder, {
     maxAge: '1y'
   }));
-
-  // server.get('/api/pizzas', (req, res) => {
-  //   console.log('################### request');
-  //   res.send([{data: "Test 1"},{data: "Test 2"}]);
-  // });
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
