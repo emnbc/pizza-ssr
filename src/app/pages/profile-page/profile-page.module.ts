@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ProfilePageComponent } from './profile-page.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NgZorroModule } from 'src/app/shared/ng-zorro.module';
-
+import { ProfilePageRoutingModule } from './profile-page-routing.module';
 
 
 @NgModule({
@@ -10,6 +10,7 @@ import { NgZorroModule } from 'src/app/shared/ng-zorro.module';
     ProfilePageComponent
   ],
   imports: [
+    ProfilePageRoutingModule,
     SharedModule,
     NgZorroModule
   ]

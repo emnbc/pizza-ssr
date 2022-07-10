@@ -6,3 +6,8 @@ export interface PizzaResponse {
     count: number;
     price: number;
 }
+
+export interface LoginPost {
+    email: string;
+    password: string;
+}

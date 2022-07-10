@@ -1,5 +1,6 @@
 
 import { NgModule } from '@angular/core';
+import { IconDefinition } from '@ant-design/icons-angular';
 
 import { NzAffixModule } from 'ng-zorro-antd/affix';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
@@ -29,7 +30,7 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzI18nModule } from 'ng-zorro-antd/i18n';
-import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzIconModule, NZ_ICONS } from 'ng-zorro-antd/icon';
 import { NzImageModule } from 'ng-zorro-antd/image';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
@@ -69,6 +70,10 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzResizableModule } from 'ng-zorro-antd/resizable';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
+
+import { UserOutline, LockOutline } from '@ant-design/icons-angular/icons'
+
+const icons: IconDefinition[] = [ UserOutline, LockOutline ];
 
 @NgModule({
   exports: [
@@ -140,7 +145,8 @@ import { NzPipesModule } from 'ng-zorro-antd/pipes';
     NzWaveModule,
     NzResizableModule,
     NzPipesModule,
-  ]
+  ],
+  providers: [ { provide: NZ_ICONS, useValue: icons } ]
 })
 export class NgZorroModule {
 

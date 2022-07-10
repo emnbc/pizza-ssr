@@ -1,0 +1,22 @@
+.sign-in-page {
+    &__form {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    &__margin {
+      margin-bottom: 16px;
+    }
+
+    &__forgot {
+      float: right;
+    }
+
+    &__button {
+      width: 100%;
+    }
+
+    &__error {
+      color: #ff4d4f;
+    }
+}

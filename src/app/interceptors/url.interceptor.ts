@@ -22,10 +22,8 @@ export class UrlInterceptor implements HttpInterceptor {
 
     if (this.request && !isAbsoluteUrl(req.url)) {
       const protocolHost = `${this.request.protocol}://${this.request.get('host')}`;
-
       const pathSeparator = !req.url.startsWith('/') ? '/' : '';
       const url = protocolHost + pathSeparator + req.url;
-
       const serverRequest = req.clone({ url });
 
       return next.handle(serverRequest);

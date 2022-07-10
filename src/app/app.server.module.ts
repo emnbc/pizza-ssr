@@ -20,7 +20,7 @@ import { UrlInterceptor } from './interceptors/url.interceptor';
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
-    { provide: HTTP_INTERCEPTORS, useClass: UrlInterceptor, multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: UrlInterceptor, multi: true }
   ],
   bootstrap: [AppComponent],
 })

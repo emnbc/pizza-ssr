@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 
@@ -8,21 +8,25 @@ import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgZorroModule } from './shared/ng-zorro.module';
 import { SharedModule } from './shared/shared.module';
-import { HomePageModule } from './pages/home-page/home-page.module';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
-import { ProfilePageModule } from './pages/profile-page/profile-page.module';
+import { PrivatePageComponent } from './pages/private-page/private-page.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { HomePageModule } from './pages/home-page/home-page.module';
 
 registerLocaleData(en);
 
+export const LOCAL_STORAGE = new InjectionToken<Storage | null>('localStorage');
+
+const getLocalStorage = () => {
+  return typeof window !== 'undefined' ? window.localStorage : null;
+};
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainMenuComponent
-  ],
+  declarations: [AppComponent, MainMenuComponent, PrivatePageComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     SharedModule,
@@ -32,9 +36,12 @@ registerLocaleData(en);
     TransferHttpCacheModule,
     NgZorroModule,
     HomePageModule,
-    ProfilePageModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: NZ_I18N, useValue: en_US },
+    { provide: LOCAL_STORAGE, useFactory: getLocalStorage },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

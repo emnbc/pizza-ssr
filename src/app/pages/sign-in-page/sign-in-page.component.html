@@ -1,0 +1,55 @@
+<div class="sign-in-page">
+  <form
+    nz-form
+    [formGroup]="loginForm"
+    class="sign-in-page__form"
+    (ngSubmit)="submitForm()"
+  >
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Email">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            type="text"
+            nz-input
+            formControlName="email"
+            placeholder="Email"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            type="password"
+            nz-input
+            formControlName="password"
+            placeholder="Password"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <div nz-row class="sign-in-page__margin">
+      <div nz-col [nzSpan]="12">
+        <label nz-checkbox formControlName="remember">
+          <span>Remember me</span>
+        </label>
+      </div>
+      <div nz-col [nzSpan]="12">
+        <a class="sign-in-page__forgot">Forgot password</a>
+      </div>
+    </div>
+    <button
+      nz-button
+      class="sign-in-page__button sign-in-page__margin"
+      [nzType]="'primary'"
+    >
+      Log in
+    </button>
+    <div *ngIf="error" class="sign-in-page__margin sign-in-page__error">
+      Email or password do not match
+    </div>
+    Or
+    <a>register now!</a>
+  </form>
+</div>
