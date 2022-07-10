@@ -10,9 +10,8 @@
     "dev:ssr": "ng run pizza-ssr:serve-ssr",
     "serve:ssr": "node dist/pizza-ssr/server/main.js",
     "build:ssr": "ng build && ng run pizza-ssr:server",
-    "build-bash:ssr": "ng build && ng run pizza-ssr:server && npm run postbuild",
     "prerender": "ng run pizza-ssr:prerender",
-    "postbuild": "bash ./scripts/postbuild.sh"
+    "executable": "chmod u+x ./dist/pizza-ssr/server/main.js"
   },
   "private": true,
   "dependencies": {
