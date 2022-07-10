@@ -1,5 +1,7 @@
 <div class="container main-menu">
-  <div class="main-menu__logo pointer" (click)="toHome()"></div>
+  <div class="main-menu__logo pointer" (click)="toHome()">
+    <img src="assets/img/logo.png" alt="Pizza SSR">
+  </div>
   <div *ngIf="user.id; else elseBlock">
     <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
       {{user.email}}
