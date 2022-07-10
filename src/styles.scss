@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import './scss/variables.scss';
+
 .container {
     width: 100%;
-    max-width: 1140px;
+    max-width: var(--container-width);
     margin: 0 auto;
 }
 
@@ -10,14 +12,13 @@
     flex-wrap: wrap;
 
     &__item {
-        @media screen and (max-width: 600px) {
-            width: 100%;
-        }
-        @media screen and (min-width: 601px) and (max-width: 960px) {
+        width: 25%;
+
+        @media screen and (max-width: $tablet-breakpoint) {
             width: 50%;
         }
-        @media screen and (min-width: 961px) {
-            width: 25%;
+        @media screen and (max-width: $mobile-breakpoint) {
+            width: 100%;
         }
     }
 }

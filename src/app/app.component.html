@@ -1,11 +1,8 @@
-<nz-layout>
-  <nz-header>
-
+<nz-layout class="main-layout">
+  <nz-header class="main-layout__header main-layout__padding">
     <pzs-main-menu></pzs-main-menu>
-
   </nz-header>
-  <nz-content>
-
+  <nz-content class="main-layout__content main-layout__padding">
     <div class="container">
       <nz-breadcrumb>
         <nz-breadcrumb-item>Home</nz-breadcrumb-item>
@@ -13,11 +10,9 @@
         <nz-breadcrumb-item>App</nz-breadcrumb-item>
       </nz-breadcrumb>
     </div>
-
     <div class="container">
       <router-outlet></router-outlet>
     </div>
-
   </nz-content>
-  <nz-footer>Pizza SSR ©2021 EMNBC</nz-footer>
+  <nz-footer class="main-layout__footer main-layout__padding">Pizza SSR ©2021 EMNBC</nz-footer>
 </nz-layout>

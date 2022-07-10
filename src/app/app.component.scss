@@ -1,11 +1,32 @@
+@import '../scss/variables.scss';
+
 nz-breadcrumb {
     margin: 16px 0;
 }
 
-nz-content {
-    padding: 0 50px;
-}
+.main-layout {
+    height: 100%;
 
-nz-footer {
-    text-align: center;
+    &__header {
+        flex: 0 0 64px;
+    }
+    &__content {
+        flex: 1 0 auto;
+    }
+    &__footer {
+        flex: 0 0 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__padding {
+        padding: 0 48px;
+
+        @media screen and (max-width: $tablet-breakpoint) {
+            padding: 0 24px;
+        }
+        @media screen and (max-width: $mobile-breakpoint) {
+            padding: 0 16px;
+        }
+    }
 }
