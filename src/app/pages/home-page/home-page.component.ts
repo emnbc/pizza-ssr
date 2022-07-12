@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PizzaResponse } from '../../interfaces/pazza.interface';
-import { PizzaService } from '../../services/pizza.service';
+import { Good } from '../../models/good.model';
+import { GoodResponse } from '../../interfaces/common.interface';
+import { GoodService } from '../../services/good.service';
+import { CartService } from '../../services/cart.servise';
 
 @Component({
   selector: 'pzs-home-page',
@@ -9,14 +11,18 @@ import { PizzaService } from '../../services/pizza.service';
 })
 export class HomePageComponent implements OnInit {
 
-  pizzas: PizzaResponse[] = [];
+  goods: GoodResponse[] = [];
 
-  constructor(private pizzaService: PizzaService) { }
+  constructor(private goodService: GoodService, private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.pizzaService.getPizzas().subscribe(res => {
-      this.pizzas = res;
+    this.goodService.getPizzas().subscribe(res => {
+      this.goods = res;
     });
+  }
+
+  addToCart(good: Good): void {
+    this.cartService.addToCart(good);
   }
 
 }

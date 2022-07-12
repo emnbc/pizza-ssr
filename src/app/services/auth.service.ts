@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { LOCAL_STORAGE } from '../app.module';
-import { LoginPost } from '../interfaces/pazza.interface';
+import { LoginPost } from '../interfaces/common.interface';
 import { User } from '../models/user.model';
 
 const TOKEN_KEY = 'token';
