@@ -2,27 +2,30 @@
   <div class="main-menu__logo pointer" (click)="toHome()">
     <img src="assets/img/logo.png" alt="Pizza SSR">
   </div>
-  <div *ngIf="user.id; else elseBlock">
-    <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
-      {{user.email}}
-      <i nz-icon nzType="down"></i>
-    </a>
-    <nz-dropdown-menu #menu="nzDropdownMenu">
-      <ul nz-menu>
-        <li nz-menu-item [routerLink]="['/profile']">Profile</li>
-        <li nz-menu-item>My orders</li>
-        <li nz-menu-divider></li>
-        <li nz-menu-item (click)="signOut()">Sign Out</li>
-      </ul>
-    </nz-dropdown-menu>
-  </div>
-  <ng-template #elseBlock>
-    <div>
-      <ul nz-menu nzTheme="dark" [nzSelectable]="false" nzMode="horizontal">
-        <li nz-menu-item>
-          <a [routerLink]="['/sign-in']">Sign In</a>
-        </li>
-      </ul>
+  <div class="main-menu__user">
+    <nz-badge nzStandalone [nzCount]="quantityItems"></nz-badge>
+    <div *ngIf="user.id; else elseBlock">
+      <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+        {{user.email}}
+        <i nz-icon nzType="down"></i>
+      </a>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item [routerLink]="['/profile']">Profile</li>
+          <li nz-menu-item>My orders</li>
+          <li nz-menu-divider></li>
+          <li nz-menu-item (click)="signOut()">Sign Out</li>
+        </ul>
+      </nz-dropdown-menu>
     </div>
-  </ng-template>
+    <ng-template #elseBlock>
+      <div>
+        <ul nz-menu nzTheme="dark" [nzSelectable]="false" nzMode="horizontal">
+          <li nz-menu-item>
+            <a [routerLink]="['/sign-in']">Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
+  </div>
 </div>

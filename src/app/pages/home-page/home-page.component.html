@@ -1,10 +1,25 @@
 <div class="flex-grid">
-    <div *ngFor="let pizza of goods" class="flex-grid__item">
-        <nz-card nzHoverable [nzCover]="coverTemplate">
-            <nz-card-meta [nzTitle]="pizza.name" [nzDescription]="pizza.description"></nz-card-meta>
-        </nz-card>
-        <ng-template #coverTemplate>
-            <img [alt]="pizza.img" [src]="'assets/img/' + pizza.img" />
-        </ng-template>
+  <div *ngFor="let good of goods" class="flex-grid__item">
+    <div class="card">
+      <div class="card__body">
+        <div
+          class="card__img"
+          [style]="'background-image: url(\'assets/img/' + good.img + '\');'"
+        ></div>
+        <div class="card__description">
+          <h4>{{ good.name }}</h4>
+          <div>{{ good.description }}</div>
+        </div>
+      </div>
+      <button
+        class="card__button"
+        nz-button
+        nzType="primary"
+        nzBlock
+        (click)="addToCart(good)"
+      >
+        Add to cart
+      </button>
     </div>
+  </div>
 </div>

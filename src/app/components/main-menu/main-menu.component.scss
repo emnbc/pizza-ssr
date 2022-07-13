@@ -12,6 +12,15 @@
             width: 130px;
         }
     }
+
+    &__user {
+        display: flex;
+        align-items: center;
+
+        nz-badge {
+            margin-right: 12px;
+        }
+    }
 }
 
 [nz-menu] {
