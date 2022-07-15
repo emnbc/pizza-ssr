@@ -1,0 +1,15 @@
+<nz-list>
+  <nz-list-item *ngFor="let item of cart">
+    <div>
+      <h3>{{ item.quantity }} x {{ item.good.name }}</h3>
+      <div>{{ item.good.description }}</div>
+      <div>
+        <strong>{{ item.good.price }}</strong>
+      </div>
+    </div>
+    <button nz-button nzType="primary" nzDanger (click)="deleteItem(item)">
+      <i nz-icon nzType="delete" nzTheme="fill"></i>
+      Delete Item
+    </button>
+  </nz-list-item>
+</nz-list>

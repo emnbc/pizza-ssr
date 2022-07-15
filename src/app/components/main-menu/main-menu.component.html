@@ -3,7 +3,9 @@
     <img src="assets/img/logo.png" alt="Pizza SSR">
   </div>
   <div class="main-menu__user">
-    <nz-badge nzStandalone [nzCount]="quantityItems"></nz-badge>
+    <a [routerLink]="['/cart']">
+      <nz-badge nzStandalone [nzCount]="quantityItems"></nz-badge>
+    </a>
     <div *ngIf="user.id; else elseBlock">
       <a nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
         {{user.email}}
