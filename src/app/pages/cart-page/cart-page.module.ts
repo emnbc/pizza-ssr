@@ -3,6 +3,7 @@ import { CartPageComponent } from './cart-page.component';
 import { CartPageRoutingModule } from './cart-page-routing.module';
 import { NgZorroModule } from '../../shared/ng-zorro.module';
 import { SharedModule } from '../../shared/shared.module';
+import { AdjusterModule } from '../../components/adjuster/adjuster.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SharedModule } from '../../shared/shared.module';
   imports: [
     CartPageRoutingModule,
     SharedModule,
-    NgZorroModule
+    NgZorroModule,
+    AdjusterModule
   ]
 })
 export class CartPageModule { }

@@ -1,0 +1,11 @@
+<div class="adjuster">
+    <div class="adjuster__delta">
+        <div (click)="resize(-1)"><i nz-icon nzType="minus" nzTheme="outline"></i></div>
+    </div>
+    <div class="adjuster__counter">
+        {{ value }}
+    </div>
+    <div class="adjuster__delta">
+        <div (click)="resize(+1)"><i nz-icon nzType="plus" nzTheme="outline"></i></div>
+    </div>
+</div>

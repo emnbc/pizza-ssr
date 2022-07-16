@@ -58,6 +58,13 @@ export class CartService {
     this.cart$.next(cartConteins);
   }
 
+  cartChange(cart: OrderItem[]) {
+    const filteredCart = cart.filter(c => c.quantity > 0);
+
+    this.localStorage?.setItem(TOKEN_KEY, JSON.stringify(filteredCart));
+    this.cart$.next(filteredCart);
+  }
+
   clearCart() {
     this.cart$.next([]);
   }

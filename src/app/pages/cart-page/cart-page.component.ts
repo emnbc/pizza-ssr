@@ -27,4 +27,8 @@ export class CartPageComponent implements OnInit, OnDestroy {
     this.cartService.deleteFromCart(order);
   }
 
+  cartChange() {
+    this.cartService.cartChange(this.cart);
+  }
+
 }

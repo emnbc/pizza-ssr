@@ -1,0 +1,26 @@
+.cart-page {
+  &__item-picture {
+    flex: 0 0 180px;
+    height: 130px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &__item-body {
+    flex: 1 1 auto;
+    padding-left: 16px;
+  }
+  &__item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+  }
+  &__item-price {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  &__item-adjuster {
+    min-width: 150px;
+  }
+}
