@@ -7,7 +7,7 @@
         <div>{{ item.good.description }}</div>
         <div class="cart-page__item-footer">
           <div class="cart-page__item-price">
-            {{ item.good.price * item.quantity }}
+            {{ item.good.price * item.quantity | currency:'EUR' }}
           </div>
           <div class="cart-page__item-adjuster">
             <pzs-adjuster
