@@ -11,15 +11,12 @@
           <div>{{ good.description }}</div>
         </div>
       </div>
-      <button
-        class="card__button"
-        nz-button
-        nzType="primary"
-        nzBlock
-        (click)="addToCart(good)"
-      >
-        Add to cart
-      </button>
+      <div class="card__bottom">
+        <div class="card__price">{{ good.price | currency:'EUR' }}</div>
+        <button nz-button nzType="primary" (click)="addToCart(good)">
+          Add to Cart
+        </button>
+      </div>
     </div>
   </div>
 </div>
