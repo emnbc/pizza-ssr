@@ -1,4 +1,16 @@
-<p>profile-page works!</p>
-<div>
-    {{user | json}}
-</div>
+<nz-card nzTitle="Profile">
+
+  <h4>First Name</h4>
+  <div>{{user.firstName}}</div>
+
+  <hr class="divider">
+
+  <h4>Last Name</h4>
+  <div>{{user.lastName}}</div>
+
+  <hr class="divider">
+
+  <h4>Email</h4>
+  <div>{{user.email}}</div>
+
+</nz-card>
