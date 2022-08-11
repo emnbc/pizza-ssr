@@ -14,7 +14,7 @@
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu>
           <li nz-menu-item [routerLink]="['/profile']">Profile</li>
-          <li nz-menu-item>My orders</li>
+          <li nz-menu-item [routerLink]="['/orders']">My orders</li>
           <li nz-menu-divider></li>
           <li nz-menu-item (click)="signOut()">Sign Out</li>
         </ul>

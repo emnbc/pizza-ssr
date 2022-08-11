@@ -19,6 +19,11 @@ const routes: Routes = [
     canLoad: [IsAuthGuard]
   },
   { 
+    path: 'orders',
+    loadChildren: () => import('./pages/orders-page/orders-page.module').then(m => m.OrdersPageModule),
+    canLoad: [IsAuthGuard]
+  },
+  { 
     path: 'sign-in',
     loadChildren: () => import('./pages/sign-in-page/sign-in-page.module').then(m => m.SignInPageModule)
   },
