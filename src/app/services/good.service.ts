@@ -10,7 +10,7 @@ import { GoodResponse } from '../interfaces/common.interface';
 export class GoodService {
   constructor(private http: HttpClient) {}
 
-  getPizzas(): Observable<GoodResponse[]> {
+  getGoods(): Observable<GoodResponse[]> {
     return this.http.get<GoodResponse[]>('/api/pizzas');
   }
 }

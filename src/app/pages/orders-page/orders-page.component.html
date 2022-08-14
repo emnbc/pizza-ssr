@@ -1,1 +1,8 @@
-<p>orders-page works!</p>
+<nz-collapse [nzBordered]="false">
+  <nz-collapse-panel
+    *ngFor="let order of orders"
+    [nzHeader]="(order.date | date) || order.date"
+  >
+    <p>Address: {{ order.address }}</p>
+  </nz-collapse-panel>
+</nz-collapse>

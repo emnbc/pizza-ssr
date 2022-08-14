@@ -16,7 +16,7 @@ export class HomePageComponent implements OnInit {
   constructor(private goodService: GoodService, private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.goodService.getPizzas().subscribe(res => {
+    this.goodService.getGoods().subscribe(res => {
       this.goods = res;
     });
   }
