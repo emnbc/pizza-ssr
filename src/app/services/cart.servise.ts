@@ -16,14 +16,14 @@ export class CartService {
   constructor(@Inject(LOCAL_STORAGE) private localStorage: Storage | null) {}
 
   addToCart(good: Good) {
-    const cartItem = this.cart$.getValue().find((i) => i.good.id === good.id);
+    const cartItem = this.cart$.getValue().find((i) => i.product.id === good.id);
 
     if (cartItem) {
       cartItem.quantity++;
     } else {
       const order: OrderItem = {
         quantity: 1,
-        good: good,
+        product: good,
       };
       const newCart = [...this.cart$.getValue(), order];
 
@@ -39,7 +39,7 @@ export class CartService {
   deleteFromCart(order: OrderItem) {
     const cartConteins = this.cart$.getValue();
     const newCart = cartConteins.filter((el) => {
-      return order.good?.id !== el.good?.id;
+      return order.product?.id !== el.product?.id;
     });
 
     this.localStorage?.setItem(TOKEN_KEY, JSON.stringify(newCart));
@@ -49,7 +49,7 @@ export class CartService {
   changeQuantity(value: number, id: number) {
     const cartConteins = this.cart$.getValue();
     cartConteins.map((el) => {
-      if (el.good?.id === id) {
+      if (el.product?.id === id) {
         el.quantity = value;
       }
     });

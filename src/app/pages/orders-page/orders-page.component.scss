@@ -1,0 +1,16 @@
+.product {
+    margin-bottom: 16px;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__count {
+        margin-left: 12px;
+    }
+}
+
+hr {
+    margin: 16px 0;
+}
