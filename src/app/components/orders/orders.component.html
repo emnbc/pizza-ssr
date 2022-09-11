@@ -1,0 +1,30 @@
+<nz-collapse [nzBordered]="false">
+    <nz-collapse-panel
+      *ngFor="let order of orders"
+      [nzHeader]="(order.date | date:'medium') || order.date"
+    >
+      <div *ngFor="let item of order.products" class="product">
+        <h4 class="product__title">
+          <span>
+            <span>{{item.product.name}}</span>
+            <span class="product__count">x{{item.quantity}}</span>
+          </span>
+          <span>{{item.product.price | currency:'EUR'}}</span>
+        </h4>
+        <div>
+          {{item.product.description}}
+        </div>
+      </div>
+      <hr>
+      <h4 class="product__title">
+        <span>Сost of delivery:</span>
+        <span>{{order.deliveryPrice | currency:'EUR'}}</span>
+      </h4>
+      <hr>
+      <h4 class="product__title">
+        <span>Total price:</span>
+        <span>{{getTotalPrice(order) | currency:'EUR'}}</span>
+      </h4>
+    </nz-collapse-panel>
+  </nz-collapse>
+  

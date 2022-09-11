@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { ProfilePageComponent } from './profile-page.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { NgZorroModule } from 'src/app/shared/ng-zorro.module';
+import { SharedModule } from '../../shared/shared.module';
+import { NgZorroModule } from '../../shared/ng-zorro.module';
 import { ProfilePageRoutingModule } from './profile-page-routing.module';
+import { OrdersModule } from '../../components/orders/orders.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ProfilePageRoutingModule } from './profile-page-routing.module';
   imports: [
     ProfilePageRoutingModule,
     SharedModule,
-    NgZorroModule
+    NgZorroModule,
+    OrdersModule,
   ]
 })
 export class ProfilePageModule { }
