@@ -28,7 +28,7 @@ export class OrdersComponent implements OnInit {
       const productsPrice = order.products.reduce(
         (a, b) => a + ((b.price  as number) * 100), 0
       );
-      return productsPrice + (order.deliveryPrice * 100) / 100;
+      return (productsPrice + order.deliveryPrice * 100) / 100;
     } else {
       return 0;
     }

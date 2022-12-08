@@ -1,4 +1,4 @@
-<div class="profile-blocks">
+<!-- <div class="profile-blocks">
   <div class="profile-blocks__item">
     <nz-card nzTitle="Personal Area">
 
@@ -24,4 +24,31 @@
     </nz-card>
   </div>
 </div>
+ -->
 
+<div class="double-flex-grid">
+  <div class="double-flex-grid__item">
+    <nz-card nzTitle="Personal Area">
+
+      <h4>First Name</h4>
+      <div>{{user.firstName}}</div>
+    
+      <hr class="divider">
+    
+      <h4>Last Name</h4>
+      <div>{{user.lastName}}</div>
+    
+      <hr class="divider">
+    
+      <h4>Email</h4>
+      <div>{{user.email}}</div>
+    
+    </nz-card>
+  </div>
+
+  <div class="double-flex-grid__item">
+    <nz-card nzTitle="Orders">
+      <pzs-orders></pzs-orders>
+    </nz-card>
+  </div>
+</div>

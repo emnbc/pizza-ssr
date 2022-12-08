@@ -1,38 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
-@import './scss/variables.scss';
+@import "./scss/variables.scss";
 
 .container {
-    width: 100%;
-    max-width: var(--container-width);
-    margin: 0 auto;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
 }
 
-.flex-grid {
-    display: flex;
-    flex-wrap: wrap;
+.quad-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
 
-    &__item {
-        width: 25%;
+  &__item {
+    width: 25%;
 
-        @media screen and (max-width: $tablet-breakpoint) {
-            width: 50%;
-        }
-        @media screen and (max-width: $mobile-breakpoint) {
-            width: 100%;
-        }
+    @media screen and (max-width: $tablet-breakpoint) {
+      width: 50%;
     }
+    @media screen and (max-width: $mobile-breakpoint) {
+      width: 100%;
+    }
+  }
+}
+
+.double-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    width: 50%;
+
+    @media screen and (max-width: $tablet-breakpoint) {
+      width: 100%;
+    }
+  }
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .ant-collapse-borderless {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 hr {
-    height: 0;
-    border: 0;
-    border-bottom: 1px solid #d9d9d9;
+  height: 0;
+  border: 0;
+  border-bottom: 1px solid #d9d9d9;
 }
